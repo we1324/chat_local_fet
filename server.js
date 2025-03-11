@@ -1,9 +1,19 @@
 const WebSocket = require('ws');
+const readline = require('readline');
 
 const server = new WebSocket.Server({ port: 8080 });
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 server.on('connection', socket => {
     console.log("Cliente conectado");
+    rl.question("Ingresa tu nombre: ", name => {
+        rl.on('line', message => {
+            socket.send(`[${name}] ${message}`);
+        });
+    });
 
     socket.on('message', message => {
         const timestamp = new Date().toLocaleString(); 

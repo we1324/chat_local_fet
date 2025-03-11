@@ -33,3 +33,4 @@ ws.on('close', () => {
 ws.on('error', error => {
     console.log("Error de conexión:", error.message);
 });
+
