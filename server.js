@@ -33,4 +33,4 @@ server.on('connection', socket => {
     socket.on('close', () => console.log("Cliente desconectado"));
 });
 
-console.log("Servidor WebSocket corriendo en ws://20.20.2.219:8080");
+console.log("Servidor WebSocket corriendo en ws://192.168.1.13:8080");
