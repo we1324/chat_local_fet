@@ -1,15 +1,15 @@
+
 const fs = require('fs');
 
-function leerArchivo(ruta) {
-    fs.readFile(ruta, 'utf8', (err, data) => {
-        if (err) {
-            console.error("Error al leer el archivo:", err.message);
-            return;
-        }
-        console.log(data);
-    });
-}
+const filePath = './oa.txt'; 
 
 
-const rutaArchivo = 'oa.txt';
-leerArchivo(rutaArchivo);
+fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error al leer el archivo:', err);
+        return;
+    }
+    
+    console.log('Contenido del archivo:');
+    console.log(data);
+});
